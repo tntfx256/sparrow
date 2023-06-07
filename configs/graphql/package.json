@@ -1,0 +1,17 @@
+{
+  "name": "@sparrow/graphql-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "dependencies": {
+    "@eddeee888/gcg-typescript-resolver-files": "^0.5.0",
+    "@graphql-codegen/add": "^5.0.0",
+    "@graphql-codegen/cli": "4.0.1",
+    "@graphql-codegen/client-preset": "^4.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.0",
+    "@graphql-codegen/typescript": "^4.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.0",
+    "@graphql-codegen/typescript-resolvers": "^4.0.0"
+  },
+  "devDependencies": {}
+}

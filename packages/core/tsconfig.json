@@ -1,0 +1,6 @@
+{
+  "extends": "@sparrow/tsconfig/base.json",
+
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".turbo", "dist"]
+}

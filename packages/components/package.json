@@ -1,0 +1,22 @@
+{
+  "name": "@sparrow/components",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {},
+  "dependencies": {
+    "@sparrow/core": "*",
+    "@sparrow/hooks": "*",
+    "@sparrow/theme": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
+    "react-markdown": "^8.0.7"
+  },
+  "devDependencies": {
+    "@sparrow/tsconfig": "*"
+  }
+}

@@ -1,0 +1,6 @@
+@import "@sparrow/theme";
+
+.dialog-container {
+  @include fill(absolute);
+  pointer-events: none;
+}
