@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { isServer, logger } from "@sparrow/core";
 import { injectTheme } from "./styles/css-vars";
 import { createTheme } from "./theme";
-import type { ColorScheme, ColorSchemeMode, Theme, ThemeOptions } from "./types";
+import type { ColorScheme, ColorSchemeMode, Theme } from "./types";
 // reset should be first
 import "./styles/reset.scss";
 // and then the global
@@ -11,8 +11,8 @@ import "./styles/globals.scss";
 
 export type ThemeProviderProps = {
   mode?: ColorSchemeMode;
-  defaultTheme: ThemeOptions;
-  alternateTheme?: ThemeOptions;
+  defaultTheme: Theme;
+  alternateTheme?: Theme;
 };
 
 export type ThemeState = {
@@ -43,7 +43,7 @@ export function ThemeProvider(props: PropsWithChildren<ThemeProviderProps>) {
     }
 
     if (!alternateTheme || hasError) {
-      const theme = createTheme(defaultTheme);
+      const theme = defaultTheme;
       injectTheme(theme);
       return theme;
     }
@@ -53,9 +53,13 @@ export function ThemeProvider(props: PropsWithChildren<ThemeProviderProps>) {
     const theme =
       defaultTheme.mode === "light"
         ? // defaultTheme is light
-          createTheme(colorScheme === "light" ? defaultTheme : alternateTheme)
+          colorScheme === "light"
+          ? defaultTheme
+          : alternateTheme
         : // defaultTheme is dark
-          createTheme(colorScheme === "dark" ? defaultTheme : alternateTheme);
+        colorScheme === "dark"
+        ? defaultTheme
+        : alternateTheme;
 
     injectTheme(theme);
     return theme;
