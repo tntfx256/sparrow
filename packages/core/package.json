@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "sideEffects": false,
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "index.ts",
+  "types": "index.ts",
   "scripts": {},
   "dependencies": {
     "react-icons": "^4.9.0"

@@ -31,20 +31,7 @@ const defaultNextConfig = {
 
   swcMinify: true,
 
-  transpilePackages: [
-    "@sparrow/components",
-    "@sparrow/contacts",
-    "@sparrow/core",
-    "@sparrow/feeds",
-    "@sparrow/hooks",
-    "@sparrow/storybook",
-    "@sparrow/theme",
-    "@sparrow/trade-game",
-    "@sparrow/user-status-widget",
-    // apps
-    "@roboself/app",
-    "@sparrow/app",
-  ],
+  transpilePackages: ["@sparrow/components", "@sparrow/core", "@sparrow/hooks", "@sparrow/theme"],
 };
 
 /**
@@ -57,6 +44,8 @@ function withSparrow(nextConfig, pwaConfig) {
   const finalNextConfig = {
     ...defaultNextConfig,
     ...nextConfig,
+
+    transpilePackages: [...(defaultNextConfig.transpilePackages || []), ...(nextConfig.transpilePackages || [])],
 
     publicRuntimeConfig: {
       ...defaultNextConfig.publicRuntimeConfig,

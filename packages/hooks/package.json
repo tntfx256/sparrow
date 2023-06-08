@@ -7,12 +7,16 @@
   "scripts": {},
   "dependencies": {
     "@sparrow/core": "*",
-    "@sparrow/testing": "*",
     "axios": "^1.4.0",
-    "immer": "^10.0.2",
-    "react": "^18.2.0"
+    "immer": "^10.0.2"
   },
   "devDependencies": {
-    "@sparrow/tsconfig": "*"
+    "@sparrow/testing": "*",
+    "@sparrow/tsconfig": "*",
+    "@types/graphql": "^14.5.0"
+  },
+  "peerDependencies": {
+    "graphql": "^16.6.0",
+    "react": "^18.2.0"
   }
 }
